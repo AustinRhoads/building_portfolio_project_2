@@ -4,7 +4,7 @@
 
 I built an MVC Sinatra app called “UFO Tracker” which allows users to post recent UFO sightings and there location as well as read past UFO sightings posted. MVC is a design pattern or structure to the interface of a web app. It efficiently separates functionality of the interface into three parts; models, views, and controllers. 
 
-Models are the Ruby objects used within the app. For my app I have two basic objects; users and controllers. Users can create post many encounters. This is known as a “has_many/belongs_to” relationship, as the user “has_many” encounters and the encounter “belongs_to” the user.
+Models are the Ruby objects used within the app. For my app I have two basic objects; users and encounters. Users can create or post many encounters. This is known as a “has_many/belongs_to” relationship, as the user “has_many” encounters and the encounter “belongs_to” the user.
 
 Views are the are different HTML files for displaying the different states or pages within the app such as a page to log in or to report a UFO encounter. In this instance I’m using the file.erb(embedded ruby code) format which is essentially HTML with additional syntax to embed ruby code into the HTML file. For instance this in erb: 
 ```<h1><%= 2 * 3 %></h1>```

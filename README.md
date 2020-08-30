@@ -7,9 +7,9 @@ I built an MVC Sinatra app called “UFO Tracker” which allows users to post r
 	Models are the Ruby objects used within the app. For my app I have two basic objects; users and controllers. Users can create post many encounters. This is known as a “has_many/belongs_to” relationship, as the user “has_many” encounters and the encounter “belongs_to” the user.
 
 	Views are the are different HTML files for displaying the different states or pages within the app such as a page to log in or to report a UFO encounter. In this instance I’m using the file.erb(embedded ruby code) format which is essentially HTML with additional syntax to embed ruby code into the HTML file. For instance this in erb: 
-
+<code><h1><%= 2 * 3 %></h1></code>
 is the same as: 
-<h1>4</h1>.
+<code><h1>6</h1></code>
 
 	Controllers are classes that join the models and the views together by creating what is known as RESTful (representational state transfer) routes.
 

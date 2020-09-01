@@ -1,11 +1,32 @@
-## CLAP! CLAP! CLAP! CLAP! DEEP IN THE HEART OF TEXAS
 
-The most important thing to me about coding is that I get to create something that wasn’t there before. Originality comes with breaking stereotypes but in order to skillfully do this one has to first learn the conventional styles. The free-jazz saxophonist Ornette Coleman, having been born and raised in Fort Worth, TX, learned and mastered the tropes and cliches of country music at an early age. These tropes became the convention he twisted and mutated into a completely dynamic and expressive form of jazz music. Country music was the convention. Sinatra is all about convention. On the surface its a blog posting app factory but underneath there is a bit more wiggle room. Like Ornette Coleman, I too am from the lone star state and it’s very true that here the stars at night are big and bright. I’ve often looked up to the night’s sky and wondered when, not if, but when we’d make first contact. So I wanted to build an app that would map out UFO movement as it’s reported. Not the most original idea, I admit, but it was the best I had.
 
-## Identifying The Flying Objects
+Between 1971 and 1998, John Shepherd using scientific equipment of his own design, beamed album after album into space in an attempt to contact aliens. Among the albums sent out were Science Fiction by Ornette Coleman and Zombie by Fela Kuti and Africa 70. I don’t know why it just makes me happy to think that aliens are listening to free-jazz and funky music. If I heard Fela Kuti playing next door, I might want to stop by and say hello. So for my Sinatra portfolio project I made an MVC structured web app called “UFO Tracker” because… well, why not? Users can post and review encounters they have with extraterrestrials. 
 
-With an MVC (model, view, controller) structured Sinatra app, the models had to be simple in concept and at the same time reflect real world objects that interact with each other. So of course I created a ```User``` object that has a username, email and password but instead of having a UFO object that someone could report, I decided it was a more robust concept to use the ```Encounter``` object. An ```Encounter``` had within it a UFO, a time and place and a personal description of the experience. I wanted that personal touch that seemed to be lacking in the declassified government reports of UFOs as well as giving it the distinct classification of the Kind of encounter. None so far are reports of the third kind.
 
-## Mapping the Skies with Google APIs
+## MVC
 
-Whether your web application connects users to the local housing market or allows them to report a UFO sighting, being able to display a physical location is a powerful communication device. It very quickly tells a story and engages with the user. If we wanted to have a custom map to a specific place on our site, such as the location of our brick and mortar, it’s easy enough to create a custom map, then copy and insert the ```<iframe>``` element into our html. But what if we wanted our map to display a marker on a location that was provided by the user? Such as search results for “jazz bars in Austin, TX”, or  “used saxophone for sale near me”. This is where Google APIs can step in to really empower your web application. 
+Model View Controller is a concept that has been around since the 70’s. Basically its a separation of concerns where the models handle the data, the views handle the place to display the data and the controllers organize and tie in all the data to the views. People love to make analogies for this. Mine would be something like this…
+Picture yourself wandering around downtown Austin, TX and you happen upon a smoke-filled jazz bar.
+The music the band is playing and the booze at the bar is the data/models, 
+The bar stool and the stage are the views,
+and the stage manager, bar tender and doorman are the controllers.
+
+The models for my app had to be simple enough in concept and reflect real world objects that interact with each other. So instead of having a UFO object that someone could report I decided it was more robust of a concept to use the Encounter object. An encounter could have or not have a UFO. It could also be a tiny alien who heals your paper cuts with his glowing finger or whatever.
+
+I might have had a little too much fun with the views. NASA has all these great hi-resolution photos generated from Hubble and layered from different spectrums like ultraviolet and infrared light which are public domain and just stunning. I just couldn’t resist creating a parallax background from an image of a stellar nursery. Lots of fun! However the real magic in the views is how variables are created in the controller and referenced in the views. This makes it so each view only deals with data appropriate to it.
+
+The controllers classes that join the models and the views together utilize what is known as RESTful (representational state transfer) routes.
+
+
+
+## RESTful routes
+
+Different pages on a site are actually considered different states of that application. As we click links to navigate to different pages on a site what occurs is a state transition. RESTful routes is a conventional way of linking CRUD (create, read, update, delete) actions with HTTP verbs (get, post, patch, delete). 
+The beauty of this is how it allows us to tie the functionality of Ruby objects to the content on our web app.
+
+## Google API
+
+Ultimately I wanted the functionality of my web app to go beyond the CRUD format which is why I utilized for the first time a few Google APIs. I used the Google Maps API to display each reported UFO incident on the ‘encounter/index’ page and the Google Geocode API to have an auto-fill location input. This also allowed me to get a latitude and longitude for the encounter from the selected location, which I then used to create the marker displayed on my embedded Google map. This was just so much fun to see come together and in the end it just makes the app feel so much more powerful.
+
+## Conclusion
+

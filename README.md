@@ -6,9 +6,13 @@ Between 1971 and 1998, John Shepherd using scientific equipment of his own desig
 ## MVC
 
 Model View Controller is a concept that has been around since the 70’s. Basically its a separation of concerns where the models handle the data, the views handle the place to display the data and the controllers organize and tie in all the data to the views. People love to make analogies for this. Mine would be something like this…
+
 Picture yourself wandering around downtown Austin, TX and you happen upon a smoke-filled jazz bar.
+
 The music the band is playing and the booze at the bar is the data/models, 
-The bar stool and the stage are the views,
+
+the bar stool and the stage are the views,
+
 and the stage manager, bar tender and doorman are the controllers.
 
 The models for my app had to be simple enough in concept and reflect real world objects that interact with each other. So instead of having a UFO object that someone could report I decided it was more robust of a concept to use the Encounter object. An encounter could have or not have a UFO. It could also be a tiny alien who heals your paper cuts with his glowing finger or whatever.

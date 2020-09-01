@@ -5,7 +5,7 @@ Between 1971 and 1998, John Shepherd using scientific equipment of his own desig
 
 ## MVC
 
-Model View Controller is a concept that has been around since the 70’s. Basically its a separation of concerns where the models handle the data, the views handle the place to display the data and the controllers organize and tie in all the data to the views. People love to make analogies for this. Mine would be something like this…
+Model View Controller is a concept that has been around since the 70’s. Basically its a separation of concerns where the **models** handle the data, the **views** handle the place to display the data and the **controllers** organize and tie in all the data to the views. People love to make analogies for this. Mine would be something like this…
 
 Picture yourself wandering around downtown Austin, TX and you happen upon a smoke-filled jazz bar.
 
@@ -25,7 +25,7 @@ The controllers classes that join the models and the views together utilize what
 
 ## RESTful routes
 
-Different pages on a site are actually considered different states of that application. As we click links to navigate to different pages on a site what occurs is a state transition. RESTful routes is a conventional way of linking CRUD (create, read, update, delete) actions with HTTP verbs (get, post, patch, delete). 
+Different pages on a site are actually considered different **states** of that application. As we click links to navigate to different pages on a site what occurs is a **state transition**. RESTful routes is a conventional way of linking CRUD (create, read, update, delete) actions with HTTP verbs (get, post, patch, delete). 
 The beauty of this is how it allows us to tie the functionality of Ruby objects to the content on our web app.
 
 ## Google API

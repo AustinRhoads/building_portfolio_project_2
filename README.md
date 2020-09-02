@@ -15,7 +15,13 @@ the **bar stool** and the **stage** are the **views**,
 
 and the **stage manager**, **bar tender** and **doorman** are the **controllers**.
 
-The models for my app had to be simple enough in concept and reflect real world objects that interact with each other. So instead of having a UFO object that someone could report I decided it was more robust of a concept to use the Encounter object. An encounter could have or not have a UFO. It could also be a tiny alien who heals your paper cuts with his glowing finger or whatever.
+The models for my app had to be simple enough in concept and reflect real world objects that interact with each other. First, I built the user objects whose attributes are username,  email, password, and boolean answers for the questions, “are you a member of the military?”, and “are you a member of law enforcment?”. Next, I built the encounter class which could have a name, date, location, description, or be classified by `kind` (as in, “was this a close encounter of a first, second or third kind?”).
+The more attributes I give the encounter the more search options I have later on.
+
+For both objects there was a special method that I encluded in a shared module. This was the ```ci_find``` or “case insensitive” find method.
+``` scope :ci_find, lambda { |attribute, value| where("lower(#{attribute}) = ?", value.downcase).first }
+```
+ I’ve heard the rule many times “never trust user input” so I wanted to prevent an error when signing in as ```Username``` when the database has it saved as ```username```.  
 
 I might have had a little too much fun with the views. NASA has all these great hi-resolution photos generated from Hubble and layered from different spectrums like ultraviolet and infrared light which are public domain and just stunning. I just couldn’t resist creating a parallax background from an image of a stellar nursery. Lots of fun! However the real magic in the views is how variables are created in the controller and referenced in the views. This makes it so each view only deals with data appropriate to it.
 

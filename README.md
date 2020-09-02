@@ -25,7 +25,7 @@ The controllers classes that join the models and the views together utilize what
 
 ## RESTful routes
 
-Different pages on a site are actually considered different **states** of that application. As we click links to navigate to different pages on a site what occurs is a **state transition**. RESTful routes is a conventional way of linking CRUD (create, read, update, delete) actions with HTTP verbs (get, post, patch, delete). 
+Different pages on a site are actually considered different **states** of that application. As we click links to navigate to different pages on a site what occurs is a **state transition**. **RESTful** routes is a conventional way of linking **CRUD** (create, read, update, delete) actions with **HTTP verbs** (get, post, patch, delete). 
 The beauty of this is how it allows us to tie the functionality of Ruby objects to the content on our web app.
 
 ## Google API

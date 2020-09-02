@@ -27,7 +27,7 @@ For both objects there was a special method that I encluded in a shared module. 
  I’ve heard the rule many times “never trust user input”, so I wanted to prevent an error when signing in as "Username" when the database has it saved as "username", or "UserName".  
 
 I might have had a little too much fun with the views. NASA has all these great hi-resolution photos generated from Hubble and layered from different spectrums like ultraviolet and infrared light which are public domain and just stunning.
-![]()
+![habital](./galactic_habitable_zone.jpg)
 I just couldn’t resist creating a parallax background from an image of a galaxy cluster. Lots of fun! However the real magic in the views is how variables are created in the controller and referenced in the views. This makes it so each view only deals with data appropriate to it.
 
 The controllers classes that join the models and the views together utilize what is known as RESTful (representational state transfer) routes.

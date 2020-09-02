@@ -35,7 +35,7 @@ The beauty of this is how it allows us to tie the functionality of Ruby objects 
 
 ## Google API
 
-Ultimately I wanted the functionality of my web app to go beyond the CRUD format which is why I embedded a few Google APIs. I used the [Google Maps API](https://developers.google.com/maps/documentation) to display each reported UFO incident on the ‘encounter/index’ page and the Google Geocode API to have an auto-fill location input. This also allowed me to get a latitude and longitude for the encounter from the selected location, which I then used to create the marker displayed on my embedded Google map. This was just so much fun to see come together and in the end it just makes the app feel so much more powerful.
+Ultimately I wanted the functionality of my web app to go beyond the CRUD format which is why I embedded a few Google APIs. I used the [Google Maps API](https://developers.google.com/maps/documentation) to display each reported UFO incident on the ‘encounter/index’ page and the [Google Geocode API](https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform) to have an auto-fill location input. This also allowed me to get a latitude and longitude for the encounter from the selected location, which I then used to create the marker displayed on my embedded Google map. This was just so much fun to see come together and in the end it just makes the app feel so much more powerful.
 
 
 ## Conclusion

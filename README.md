@@ -28,10 +28,10 @@ The controllers classes that join the models and the views together utilize what
 Different pages on a site are actually considered different **states** of that application. As we click links to navigate to different pages on a site what occurs is a **state transition**. **RESTful** routes is a conventional way of linking **CRUD** (create, read, update, delete) actions with **HTTP verbs** (get, post, patch, delete). 
 The beauty of this is how it allows us to tie the functionality of Ruby objects to the content on our web app.
 
-  def test_markdown 
-    if markdown.lokks_like_shit? == true
-    try_again(```)
-    end
+          1. def test_markdown 
+            1. if markdown.lokks_like_shit? == true
+            1. try_again(```)
+            1. end
 
 ## Google API
 

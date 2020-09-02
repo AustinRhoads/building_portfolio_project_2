@@ -1,6 +1,6 @@
 
 
-Between 1971 and 1998, John Shepherd using scientific equipment of his own design, beamed album after album into space in an attempt to contact aliens. Among the albums sent out were _Science Fiction_ by Ornette Coleman and _Zombie_ by Fela Kuti and Africa 70. I don’t know why it just makes me happy to think that aliens are listening to free-jazz and funky music. If I heard Fela Kuti playing next door, I might want to stop by and say hello. So for my Sinatra portfolio project I made an MVC structured web app called “UFO Tracker” because… well, why not? Users can post and review encounters they have with extraterrestrials. 
+Between 1971 and 1998, John Shepherd using scientific equipment of his own design, beamed album after album into space in an attempt to contact aliens. Among the albums sent out were _Science Fiction_ by Ornette Coleman and _Zombie_ by Fela Kuti and Africa 70. I don’t know why it just makes me happy to think that aliens are listening to free-jazz and funky music. If I heard Fela Kuti playing next door, I might want to stop by and say hello. So for my Sinatra portfolio project I made an MVC structured web app called “UFO Tracker” because… well, why not? Users can post and review encounters they have with extraterrestrials. These are the main three concepts which grabbed my focus throughout the build.
 
 
 ## MVC

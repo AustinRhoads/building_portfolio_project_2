@@ -24,7 +24,7 @@ For both objects there was a special method that I encluded in a shared module. 
 ```scope :ci_find, lambda { |attribute, value| where("lower(#{attribute}) = ?", value.downcase).first }```
 
 
- I’ve heard the rule many times “never trust user input”, so I wanted to prevent an error when signing in as ```Username``` when the database has it saved as ```username```, or ```UserName```.  
+ I’ve heard the rule many times “never trust user input”, so I wanted to prevent an error when signing in as "Username" when the database has it saved as "username", or "UserName".  
 
 I might have had a little too much fun with the views. NASA has all these great hi-resolution photos generated from Hubble and layered from different spectrums like ultraviolet and infrared light which are public domain and just stunning. I just couldn’t resist creating a parallax background from an image of a stellar nursery. Lots of fun! However the real magic in the views is how variables are created in the controller and referenced in the views. This makes it so each view only deals with data appropriate to it.
 

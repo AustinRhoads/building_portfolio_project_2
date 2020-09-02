@@ -28,6 +28,11 @@ The controllers classes that join the models and the views together utilize what
 Different pages on a site are actually considered different **states** of that application. As we click links to navigate to different pages on a site what occurs is a **state transition**. **RESTful** routes is a conventional way of linking **CRUD** (create, read, update, delete) actions with **HTTP verbs** (get, post, patch, delete). 
 The beauty of this is how it allows us to tie the functionality of Ruby objects to the content on our web app.
 
+  def test_markdown 
+    if markdown.lokks_like_shit? == true
+    try_again(```)
+    end
+
 ## Google API
 
 Ultimately I wanted the functionality of my web app to go beyond the CRUD format which is why I embedded a few Google APIs. I used the Google Maps API to display each reported UFO incident on the ‘encounter/index’ page and the Google Geocode API to have an auto-fill location input. This also allowed me to get a latitude and longitude for the encounter from the selected location, which I then used to create the marker displayed on my embedded Google map. This was just so much fun to see come together and in the end it just makes the app feel so much more powerful.

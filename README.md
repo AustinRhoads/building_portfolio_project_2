@@ -76,11 +76,17 @@ So when we are signing in we are in one state, and when we are creating a post w
 
 
     post '/encounters' do
+    
     @encounter = Encounter.new(params)
+    
     @user = current_user
+    
     @user.encounters << @encounter
+    
     @encounter.save
+    
     redirect "/encounters/#{@encounter.id}"
+    
     end
 
 
@@ -89,11 +95,17 @@ The method ```current_user``` is used to ensure the user can only create or publ
 
 				    
         ```def redirect_if_not_logged_in(proc)
+	
           if !logged_in?
+	  
             redirect "/login"
+	    
           else
+	  
             proc.call
+	    
           end
+	  
         end```
 
 ## Google API

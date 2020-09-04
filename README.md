@@ -15,16 +15,42 @@ the **bar stool** and the **stage** are the **views**,
 
 and the **stage manager**, **bar tender** and **doorman** are the **controllers**.
 
-The models for my app had to be simple enough in concept and reflect real world objects that interact with each other. First, I built the user objects whose attributes are username,  email, password, and boolean answers for the questions, “are you a member of the military?” (```is_military?```), and “are you a member of law enforcment?” (```is_law_enforcement?```). Next, I built the encounter class which could have a name, date, location, description, or be classified by `kind` (as in, “was this a close encounter of a first, second or third kind?”).
+The models for my app had to be simple enough in concept and reflect real world objects that interact with each other. First, I built the user objects whose attributes are username,  email, password, and boolean answers for the questions, “are you a member of the military?” (```is_military?```), and “are you a member of law enforcment?” (```is_law_enforcement?```). Next, I built the encounter class which has the attributes name, date, location, description, and `kind` (as in, “was this a close encounter of a first, second or third kind?”).
 The more attributes I give the encounter the more search options I have later on.
 
-For both objects there was a special method that I encluded in a shared module. This was the ```ci_find``` or “case insensitive” find method.
+I don't want to rely on user input, so to prevent an error when signing in as "Username" when the database has it saved as "username", or "UserName" I created a special method that is encluded in a shared module. This was the ```ci_find``` or “case insensitive” find method.
 
 
 ```scope :ci_find, lambda { |attribute, value| where("lower(#{attribute}) = ?", value.downcase).first }```
 
+I also use this in my ```slugifiable``` methods so I can ```downcase``` when making a slug and ```ci_find``` anything “slugged”.
 
- I’ve heard the rule many times “never trust user input”, so I wanted to prevent an error when signing in as "Username" when the database has it saved as "username", or "UserName".  
+    module Slugifiable
+
+        module ClassMethods
+            def find_by_slug(slug)
+
+                name = slug.gsub("-", " ")
+
+                if self == User
+                    self.ci_find('username', name)
+                else
+                    self.ci_find('name', name)
+                end
+            end
+        end
+
+        module InstanceMethods
+            def slug
+                if self.class == User
+                    self.username.downcase.gsub(/\s/, "-")
+                else
+                    self.name.downcase.gsub(/\s/, "-")
+                end
+            end
+        end
+    end
+  
 
 I might have had a little too much fun with the views. NASA has all these great hi-resolution photos generated from Hubble and layered from different spectrums like ultraviolet and infrared light which are public domain and just stunning.
 

@@ -94,6 +94,31 @@ The method ```current_user``` is used to ensure the user can only create or publ
         proc.call
         end
     end
+    
+The ```proc``` is the block of code I would normally run inside the route. If the user is logged in it runs the ```proc``` if not it redirects to the “/login” route. Each route gets rewritten as follows:
+
+    get '/encounters/new' do
+        proc = Proc.new{
+        erb :'encounters/new'
+        }
+        redirect_if_not_logged_in(proc)
+    end
+
+and:
+
+    post '/encounters' do
+        
+        proc = Proc.new {
+
+        @encounter = Encounter.new(params)
+        @user = current_user
+        @user.encounters << @encounter
+        @encounter.save
+        redirect "/encounters/#{@encounter.id}"
+
+    }
+        redirect_if_not_logged_in(proc)
+    end
 
 ## Google API
 

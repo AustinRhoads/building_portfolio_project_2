@@ -65,12 +65,35 @@ The controllers classes that join the models and the views together utilize what
 ## RESTful routes
 
 Different pages on a site are actually considered different **states** of that application. As we click links to navigate to different pages on a site what occurs is a **state transition**. **RESTful** routes is a conventional way of linking **CRUD** (create, read, update, delete) actions with **HTTP verbs** (get, post, patch, delete). 
-The beauty of this is how it allows us to tie the functionality of Ruby objects to the content on our web app.
+So when we are signing in we are in one state, and when we are creating a post we are in another state of the app. Each state is responsible for retrieving it’s own data. Inside the controllers we define these routes and what data and views are accessible. For each part of the process there is a conventional way of doing things. So for instance if I am logged in and looking at all the reported UFOs and I want to report a UFO myself I click on the link “Report a UFO” and a **state transfer** begins. Because this is related to managing my encounters data the link is defined in the EncountersController class.
 
-           def test_markdown 
-             if markdown.looks_like_shit? == true
-             try_again(`use 4 tabs`)
-             end
+    get '/encounters/new' do
+        erb :'encounters/new'
+    end
+
+
+ This sends a **get** **HTTP request** for the ‘encounters/new’ view which displays a form to create a new encounter. Once the form is submitted this sends a **post HTTP request** to create a new instance of an encounter object defined as such:
+
+    post '/encounters' do
+        @encounter = Encounter.new(params)
+        @user = current_user
+        @user.encounters << @encounter
+        @encounter.save
+        redirect "/encounters/#{@encounter.id}"
+    end
+
+
+A user *has_many* encounters and an encounter *belongs_to* a user. 
+The method ```current_user``` is used to ensure the user can only create or publish a post in their own name. The beauty of this is how it allows us to tie the functionality of Ruby objects to the content on our web app. Something else to consider here is that for the app to work properly a user has to be signed in. To keep someone who isn’t logged in from using the app I created a special method with the appropriate name ```redirect_if_not_signed_in(proc)```.
+
+				    
+        def redirect_if_not_logged_in(proc)
+          if !logged_in?
+            redirect "/login"
+          else
+            proc.call
+          end
+        end
 
 ## Google API
 

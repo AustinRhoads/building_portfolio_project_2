@@ -71,7 +71,7 @@ So when we are signing in we are in one state, and when we are creating a post w
     end
 
 
- This sends a **get** **HTTP request** for the ‘encounters/new’ view which displays a form to create a new encounter. Once the form is submitted this sends a **post HTTP request** to create a new instance of an encounter object defined as such:
+ This sends a **get** **HTTP request** for the ‘encounters/new’ view which displays a form to create a new encounter. By submitting the form the user sends a **post HTTP request**.
 
 
     post '/encounters' do
@@ -85,7 +85,9 @@ So when we are signing in we are in one state, and when we are creating a post w
 
 This creates a new Encounter object, defines the current user, associates the encounter with the current user, saves and then redirects to the show page of that specific encounter.
 A user *has_many* encounters and an encounter *belongs_to* a user. 
-The method ```current_user``` is used to ensure the user can only create, publish or edit a post in their own name. The beauty of this is how it allows us to tie the functionality of Ruby objects to the content on our web app. Something else to consider here is that for the app to work properly a user has to be signed in. To keep someone who isn’t logged in from using the app I created a special method with the appropriate name ```redirect_if_not_signed_in(proc)```.
+The method ```current_user``` also ensures the user can only create, publish or edit a post in their own name.
+
+Something else to consider here is that for the app to work properly a user has to be signed in. To keep someone who isn’t logged in from using the app I created a special method with the appropriate name ```redirect_if_not_signed_in(proc)```.
 
     def redirect_if_not_logged_in(proc)
     	if !logged_in?
@@ -95,7 +97,7 @@ The method ```current_user``` is used to ensure the user can only create, publis
         end
     end
     
-The ```proc``` is the block of code I would normally run inside the route. If the user is logged in it runs the ```proc``` if not it redirects to the “/login” route. Each route gets rewritten as follows:
+The ```proc``` is the block of code I would normally run inside the route. If the user is logged in it runs the ```proc```, if a user is not logged in it redirects to the “/login” route. Each route gets rewritten as follows:
 
     get '/encounters/new' do
         proc = Proc.new{

@@ -89,11 +89,11 @@ The method ```current_user``` is used to ensure the user can only create or publ
 
     def redirect_if_not_logged_in(proc)
     	if !logged_in?
-    	redirect "/login"
-    	else
-    	proc.call
-    	end
-    end
+        redirect "/login"
+        else
+        proc.call
+        end
+    end
 
 ## Google API
 

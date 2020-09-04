@@ -76,11 +76,11 @@ So when we are signing in we are in one state, and when we are creating a post w
 
 
     post '/encounters' do
-            @encounter = Encounter.new(params)
-            @user = current_user
-            @user.encounters << @encounter
-            @encounter.save
-            redirect "/encounters/#{@encounter.id}"
+    @encounter = Encounter.new(params)
+    @user = current_user
+    @user.encounters << @encounter
+    @encounter.save
+    redirect "/encounters/#{@encounter.id}"
     end
 
 

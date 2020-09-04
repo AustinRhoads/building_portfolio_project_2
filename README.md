@@ -20,7 +20,7 @@ The models for my app had to be simple enough in concept and reflect real world 
 I don't want to rely on user input, so to prevent an error when signing in as "Username" when the database has it saved as "username", or "UserName" I created a special method that is encluded in a shared module. This was the ```ci_find``` or “case insensitive” find method.
 
 
-```scope :ci_find, lambda { |attribute, value| where("lower(#{attribute}) = ?", value.downcase).first }```
+    scope :ci_find, lambda { |attribute, value| where("lower(#{attribute}) = ?", value.downcase).first }
 
 I also use this in my ```slugifiable``` methods so I can ```downcase``` when making a slug and ```ci_find``` anything “slugged”.
 

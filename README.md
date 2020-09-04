@@ -129,3 +129,6 @@ Ultimately I wanted the functionality of my web app to go beyond the CRUD format
 
 ## Conclusion
 
+For me the best part of this project was that I took it real slow. I could have just pumped out any old web app that met the requirements but I took the time to explore new ideas and in doing so I became more comfortable with fundamental concepts in Sinatra as well as getting to play with cool stuff like the Google maps API. Seeing it all come together was great.
+
+

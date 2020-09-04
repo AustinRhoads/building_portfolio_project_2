@@ -16,7 +16,6 @@ the **bar stool** and the **stage** are the **views**,
 and the **stage manager**, **bar tender** and **doorman** are the **controllers**.
 
 The models for my app had to be simple enough in concept and reflect real world objects that interact with each other. First, I built the user objects whose attributes are username,  email, password, and boolean answers for the questions, “are you a member of the military?” (```is_military?```), and “are you a member of law enforcment?” (```is_law_enforcement?```). Next, I built the encounter class which has the attributes name, date, location, description, and `kind` (as in, “was this a close encounter of a first, second or third kind?”).
-The more attributes I give the encounter the more search options I have later on.
 
 I don't want to rely on user input, so to prevent an error when signing in as "Username" when the database has it saved as "username", or "UserName" I created a special method that is encluded in a shared module. This was the ```ci_find``` or “case insensitive” find method.
 

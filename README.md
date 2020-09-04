@@ -74,13 +74,13 @@ So when we are signing in we are in one state, and when we are creating a post w
 
  This sends a **get** **HTTP request** for the ‘encounters/new’ view which displays a form to create a new encounter. Once the form is submitted this sends a **post HTTP request** to create a new instance of an encounter object defined as such:
 
-    post '/encounters' do
-        @encounter = Encounter.new(params)
-        @user = current_user
-        @user.encounters << @encounter
-        @encounter.save
-        redirect "/encounters/#{@encounter.id}"
-    end
+        post '/encounters' do
+            @encounter = Encounter.new(params)
+            @user = current_user
+            @user.encounters << @encounter
+            @encounter.save
+            redirect "/encounters/#{@encounter.id}"
+        end
 
 
 A user *has_many* encounters and an encounter *belongs_to* a user. 

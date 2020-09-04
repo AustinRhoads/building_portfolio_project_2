@@ -84,6 +84,7 @@ So when we are signing in we are in one state, and when we are creating a post w
     end
 
 
+This creates a new Encounter object, defines the current user, associates the encounter with the current user, saves and then redirects to the show page of that specific encounter.
 A user *has_many* encounters and an encounter *belongs_to* a user. 
 The method ```current_user``` is used to ensure the user can only create, publish or edit a post in their own name. The beauty of this is how it allows us to tie the functionality of Ruby objects to the content on our web app. Something else to consider here is that for the app to work properly a user has to be signed in. To keep someone who isn’t logged in from using the app I created a special method with the appropriate name ```redirect_if_not_signed_in(proc)```.
 

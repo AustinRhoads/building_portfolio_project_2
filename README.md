@@ -107,14 +107,13 @@ The ```proc``` is the block of code I would normally run inside the route. If th
 and:
 
     post '/encounters' do
-        
         proc = Proc.new {
 
-            @encounter = Encounter.new(params)
-         @user = current_user
-         @user.encounters << @encounter
-         @encounter.save
-         redirect "/encounters/#{@encounter.id}"
+             @encounter = Encounter.new(params)
+             @user = current_user
+             @user.encounters << @encounter
+             @encounter.save
+             redirect "/encounters/#{@encounter.id}"
 
         }
         redirect_if_not_logged_in(proc)

@@ -55,7 +55,7 @@ I might have had a little too much fun with the views. NASA has all these great 
 
 ![habital](./pd36-1-gsfc_20171208_archive_e000842.jpg)
 
-I just couldn’t resist creating a parallax background from an image of a galaxy cluster. Lots of fun! However the real magic in the views is how variables are created in the controller and referenced in the views. This makes it so each view only deals with data appropriate to it.
+I just couldn’t resist creating a parallax background from an image of a galaxy cluster. Lots of fun! However the real magic in the views is how variables are created in the controller and referenced in the views. This makes it so each view can have a universal layout while only displaying the appropriate data.
 
 The controllers classes that join the models and the views together utilize what is known as RESTful (representational state transfer) routes.
 

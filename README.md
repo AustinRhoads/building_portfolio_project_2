@@ -64,6 +64,9 @@ The controllers classes that join the models and the views together utilize what
 ## RESTful routes
 
 Different pages on a site are actually considered different **states** of that application. As we click links to navigate to different pages on a site what occurs is a **state transition**. **RESTful** routes is a conventional way of linking **CRUD** (create, read, update, delete) actions with **HTTP verbs** (get, post, patch, delete). 
+
+![graph](./crud_graph.odt)
+
 So when we are signing in we are in one state, and when we are creating a post we are in another state of the app. Each state is responsible for retrieving it’s own data. Inside the controllers we define these routes and what data and views are accessible. For each part of the process there is a conventional way of doing things. So for instance if I am logged in and looking at all the reported UFOs and I want to report a UFO myself I click on the link “Report a UFO” and a **state transfer** begins. Because this is related to managing my encounters data the link is defined in the EncountersController class.
 
     get '/encounters/new' do

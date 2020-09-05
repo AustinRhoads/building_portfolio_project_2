@@ -71,7 +71,7 @@ So when we are signing in we are in one state, and when we are creating a post w
     end
 
 
- This sends a **get** **HTTP request** for the ‘encounters/new’ view which displays a form to create a new encounter. By submitting the form the user sends a **post HTTP request**.
+ This sends a **get** **HTTP request** for the ‘encounters/new’ view which displays a form to create a new encounter. By submitting the form the user sends a **post HTTP request** to the '/encounters' route.
 
 
     post '/encounters' do
